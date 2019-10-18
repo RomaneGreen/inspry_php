@@ -3,11 +3,11 @@ require_once "config.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    if (isset($_POST['name']) && isset($_POST['address']) && isset($_POST['age'])) {
+    if (isset($_POST['task']) && isset($_POST['reason']) && isset($_POST['priority'])) {
 
-        $sql = "INSERT INTO users (name, address, age) VALUES (?,?,?)";
+        $sql = "INSERT INTO users (task, reason, priority) VALUES (?,?,?)";
         if ($stmt = $link->prepare($sql)) {
-            $stmt->bind_param("ssi", $_POST['name'], $_POST['address'], $_POST['age']);
+            $stmt->bind_param("ssi", $_POST['task'], $_POST['reason'], $_POST['priority']);
             if ($stmt->execute()) {
                 header("location: index.php");
                 exit();
@@ -42,15 +42,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
                     <div class="form-group">
                         <label>Task</label>
-                        <input type="text" name="name" class="form-control" required>
+                        <input type="text" name="task" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label>Reason</label>
-                        <textarea name="address" class="form-control" required></textarea>
+                        <textarea name="reason" class="form-control" required></textarea>
                     </div>
                     <div class="form-group">
                         <label>Priority</label>
-                        <input type="number" name="age" class="form-control" required>
+                        <input type="number" name="priority" class="form-control" required>
                     </div>
                     <input type="submit" class="btn btn-primary" value="Submit">
                     <a href="index.php" class="btn btn-default">Cancel</a>

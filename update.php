@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Update User : bishrulhaq.com</title>
+    <title>Update Task</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
@@ -72,20 +72,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                <div class="card" style="margin-top:20px;">
                    <div class="card-body">
                        <div class="page-header">
-                           <h2>Update User</h2>
+                           <h2>Update Task</h2>
                        </div>
-                       <p>Edit the input to update the User.</p>
+                       <p>Edit the input to update the Task</p>
                        <form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">
                            <div class="form-group">
-                               <label>Name</label>
+                               <label>Task</label>
                                <input type="text" name="name" class="form-control" required value="<?php echo $param_name; ?>">
                            </div>
                            <div class="form-group">
-                               <label>Address</label>
+                               <label>Reason</label>
                                <textarea name="address" class="form-control" required ><?php echo $param_address; ?></textarea>
                            </div>
                            <div class="form-group">
-                               <label>Age</label>
+                               <label>Priority</label>
                                <input type="text" name="age" class="form-control" value="<?php echo $param_age; ?>" required>
                            </div>
                            <input type="submit" class="btn btn-primary" value="Submit">

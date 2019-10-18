@@ -43,9 +43,9 @@ $result = $link->query($sql);
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr>";
                             echo "<td>" . $row['id'] . "</td>";
-                            echo "<td>" . $row['name'] . "</td>";
-                            echo "<td>" . $row['address'] . "</td>";
-                            echo "<td>" . $row['age'] . "</td>";
+                            echo "<td>" . $row['task'] . "</td>";
+                            echo "<td>" . $row['reason'] . "</td>";
+                            echo "<td>" . $row['priority'] . "</td>";
                             echo "<td>";
                             echo "<a href='read.php?id=" . $row['id'] . "' class='btn btn-primary'>Read</a>";
                             echo "<a href='update.php?id=" . $row['id'] . "' class='btn btn-info'>Update</a>";
